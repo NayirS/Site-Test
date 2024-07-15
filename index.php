@@ -13,7 +13,7 @@
         <!-- Formulaire de connexion -->
         <form action='index_verif.php' method="GET">
             <div class="input-container">
-                <label for="login"><b>Login</b></label>
+                <label for="login"><b>Loging</b></label>
                 <input type="text" id="login" class="login-input" placeholder="Entre ton Login" name="nom" required>
             </div>
 
