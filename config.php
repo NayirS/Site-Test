@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost';
+$host = '158.178.193.178';
 $db = 'Bigtest';
 $user = 'mob';
 $pass = 'Mob@1234';
