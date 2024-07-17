@@ -1,29 +1,4 @@
-<?php
-// Configuration de la connexion à la base de données
-$servername = 'localhost'; // Ou l'adresse IP de votre serveur de base de données
-$username = 'root'; // Votre nom d'utilisateur
-$password = ''; // Votre mot de passe
-$dbname = 'formation'; // Nom de votre base de données
-$charset = 'utf8mb4';
 
-// Connexion à la base de données
-$connection_string = "mysql:host=$servername;dbname=$dbname;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-];
-try {
-    $pdo = new PDO($connection_string, $username, $password, $options);
-
-    // Requête SQL pour récupérer les données
-    $sql = "SELECT * FROM pharmacie";
-    $stmt = $pdo->query($sql);
-    $results = $stmt->fetchAll();
-
-} catch (PDOException $e) {
-    echo "Erreur de connexion : " . $e->getMessage();
-}
-?>
 
 <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
 </head>
