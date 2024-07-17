@@ -1,6 +1,6 @@
 <?php
 // Configuration de la connexion à la base de données
-$servername = '158.178.193.178';
+$servername = 'localhost';
 $username = 'mob'; // Votre nom d'utilisateur
 $password = 'Mob@1234'; // Votre mot de passe
 $dbname = 'Bigtest'; // Nom de votre base de données
