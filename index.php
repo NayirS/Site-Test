@@ -1,6 +1,6 @@
 <?php
 // Configuration de la connexion à la base de données
-$servername = '158.178.193.178'; // Ou l'adresse IP de votre serveur de base de données
+$servername = 'localhost'; // Ou l'adresse IP de votre serveur de base de données
 $username = 'root'; // Votre nom d'utilisateur
 $password = ''; // Votre mot de passe
 $dbname = 'formation'; // Nom de votre base de données
