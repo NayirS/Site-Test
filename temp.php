@@ -1,8 +1,8 @@
 <?php
 // Configuration de la connexion à la base de données
-$servername = '158.178.193.178';
+$servername = '127.0.0.1';
 $username = 'root'; // Votre nom d'utilisateur
-$password = ''; // Votre mot de passe
+$password = 'Admin@123'; // Votre mot de passe
 $dbname = 'Bigtest'; // Nom de votre base de données
 $charset = 'utf8mb4';
 
