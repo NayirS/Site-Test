@@ -1,0 +1,60 @@
+/* Style global pour HTML et body */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+}
+
+/* Conteneur principal */
+.ContainerPrincipal {
+    width: 100%;
+    max-width: 1200px; /* Largeur maximale ajustée */
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style pour la liste de villes */
+.villes-liste table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.villes-liste th,
+.villes-liste td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.villes-liste th {
+    background-color: #f2f2f2;
+}
+
+/* Style pour les boutons */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.return-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.return-button:hover {
+    background-color: #45a049;
+}

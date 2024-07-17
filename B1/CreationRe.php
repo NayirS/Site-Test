@@ -3,7 +3,7 @@
 $servername = '127.0.0.1';
 $username = 'root'; // Votre nom d'utilisateur
 $password = ''; // Votre mot de passe
-$dbname = 'test'; // Nom de votre base de données
+$dbname = 'formation'; // Nom de votre base de données
 $charset = 'utf8mb4';
 
 // Connexion à la base de données
