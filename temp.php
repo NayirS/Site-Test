@@ -13,26 +13,31 @@ $options = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ];
 
+// Récupération des données de la base de données
 try {
     $pdo = new PDO($connection_string, $username, $password, $options);
 
-    // Requête SQL pour récupérer les données
+    // Requête SQL pour récupérer les produits
     $sql = "SELECT * FROM pharmacie";
     $stmt = $pdo->query($sql);
-    $results = $stmt->fetchAll();
+    $products = $stmt->fetchAll();
 
 } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage();
 }
 ?>
 
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Produits</title>
     <link rel="stylesheet" href="style3.css">
 </head>
 <body>
     <div class="ContainerPrincipal">
-        <h1>Liste des Produits</h1>
-        <p>Voici la liste des Produits disponibles.</p>
+        <h1>Liste des Produits Pharmaceutiques</h1>
 
         <div class="produit-liste">
             <table>
@@ -44,38 +49,25 @@ try {
                         <th>Date d'expiration</th>
                         <th>Fournisseur</th>
                         <th>Fabricant</th>
-                        <th>Catégories</th>
-                        <th>Détail</th>
+                        <th>Catégorie</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($results as $produit): ?>
+                    <?php foreach ($products as $product): ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($produit["nom_produit"]); ?></td>
-                            <td><?php echo htmlspecialchars($produit["description"]); ?></td>
-                            <td><?php echo htmlspecialchars($produit["prix"]); ?></td>
-                            <td><?php echo htmlspecialchars($produit["date_expiration"]); ?></td>
-                            <td><?php echo htmlspecialchars($produit["fournisseur"]); ?></td>
-                            <td><?php echo htmlspecialchars($produit["fabricant"]); ?></td>
-                            <td><?php echo htmlspecialchars($produit["categorie"]); ?></td>
+                            <td><?php echo htmlspecialchars($product['nom_produit']); ?></td>
+                            <td><?php echo htmlspecialchars($product['description']); ?></td>
+                            <td><?php echo htmlspecialchars($product['prix']); ?></td>
+                            <td><?php echo htmlspecialchars($product['date_expiration']); ?></td>
+                            <td><?php echo htmlspecialchars($product['fournisseur']); ?></td>
+                            <td><?php echo htmlspecialchars($product['fabricant']); ?></td>
+                            <td><?php echo htmlspecialchars($product['categorie']); ?></td>
                             <td>
-                                <form action='details.php' method='get'>
-                                    <input type='hidden' name='id' value='<?php echo $produit["id"]; ?>' />
-                                    <button class='details-button' type='submit'>Détail</button>
-                                </form>
-                            </td>
-                            <td>
-                                <form action='modification.php' method='get'>
-                                    <input type='hidden' name='id' value='<?php echo $produit["id"]; ?>' />
-                                    <button class='modifier-button' type='submit'>Modifier</button>
-                                </form>
-                            </td>
-                            <td>
-                                <form action='suppression.php' method='post'>
-                                    <input type='hidden' name='action' value='supprimer'>
-                                    <input type='hidden' name='id' value='<?php echo $produit["id"]; ?>' />
-                                    <button class='supprimer-button' type='submit'>Supprimer</button>
+                                <form action="suppression.php" method="post">
+                                    <input type="hidden" name="action" value="supprimer">
+                                    <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
+                                    <button class="supprimer-button" type="submit">Supprimer</button>
                                 </form>
                             </td>
                         </tr>
@@ -85,7 +77,7 @@ try {
         </div>
 
         <div class="button-container">
-            <button class="return-button" onclick="window.location.href='index.php'">Retour à l'accueil</button>
+            <button class="return-button" onclick="window.location.href='index.php'">Retourner à l'accueil</button>
         </div>
     </div>
 </body>
