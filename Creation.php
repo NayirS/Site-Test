@@ -1,14 +1,17 @@
-
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de Compte</title>
     <link rel="stylesheet" href="style2.css"> <!-- Lien vers le fichier CSS -->
 </head>
 <body>
     <div class="ContainerPrincipal">
-
      <!-- Affichage du message d'erreur -->
      <?php
         if (isset($_GET['error']) && $_GET['error'] == 1) {
-            echo '<p class="error-message">Ce compte n\'existe pas.</p>';
+            echo '<p class="error-message">Erreur dans la saisie des informations.</p>';
         }
     ?>
         <!-- Formulaire de création de compte -->
@@ -20,7 +23,7 @@
 
             <div class="input-container">
                 <label for="email"><b>Email</b></label>
-                <input type="text"  class="email-input" placeholder="Entre ton Email" name="Email" required>
+                <input type="text" class="email-input" placeholder="Entre ton Email" name="Email" required>
             </div>
 
             <div class="Password">
@@ -34,3 +37,4 @@
         </form>
     </div>
 </body>
+</html>

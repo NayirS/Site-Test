@@ -21,8 +21,6 @@ body {
     margin-bottom: 20px; /* Espace en bas */
 }
 
-
-
 /* Style pour les champs de saisie (texte et mot de passe) */
 .login-input,
 .password-input {
@@ -35,8 +33,6 @@ body {
     font-size: 16px; /* Taille de police */
     transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition pour la couleur de la bordure et l'ombre */
 }
-
-
 
 /* Style pour les conteneurs de boutons */
 .button-container {
@@ -63,7 +59,6 @@ button {
     background: #2aa72a; /* Couleur de fond verte */
     color: white; /* Texte blanc */
     width: 100%; /* Largeur complète */
-    
 }
 
 .login-button:hover {
@@ -81,7 +76,6 @@ button {
 .creation-button:hover {
     background: #007bb5; /* Couleur de fond bleue plus foncée */
 }
-
 
 .error-message {
     color: red;

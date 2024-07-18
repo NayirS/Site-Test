@@ -1,18 +1,22 @@
-
-
-<link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
 </head>
 <body>
     <div class="ContainerPrincipal">
         
     <?php
         if (isset($_GET['error']) && $_GET['error'] == 1) {
-            echo '<p class="error-message">Ce compte n\'existe pas.</p>';
+            echo '<p class="error-message">Ce compte n\'existe pas ou mot de passe incorrect.</p>';
         }
         ?>
 
         <!-- Formulaire de connexion -->
-        <form action='index_verif.php' method="GET">
+        <form action='index_verif.php' method="POST">
             <div class="input-container">
                 <label for="login"><b>Login</b></label>
                 <input type="text" id="login" class="login-input" placeholder="Entre ton Login" name="nom" required>
@@ -36,3 +40,4 @@
         </form>
     </div>
 </body>
+</html>
