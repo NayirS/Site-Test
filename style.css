@@ -19,6 +19,13 @@ body {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Ombre pour effet de carte */
     text-align: center; /* Centre le texte */
     margin-bottom: 20px; /* Espace en bas */
+
+    /* Ajout pour centrer le formulaire verticalement */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Hauteur de la vue à 100% */
 }
 
 /* Style pour les champs de saisie (texte et mot de passe) */
