@@ -12,6 +12,7 @@ $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ];
+
 try {
     $pdo = new PDO($connection_string, $username, $password, $options);
 
@@ -25,12 +26,7 @@ try {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des Villes</title>
+
     <link rel="stylesheet" href="style3.css">
 </head>
 <body>
@@ -50,32 +46,36 @@ try {
                         <th>Fabricant</th>
                         <th>Catégories</th>
                         <th>Détail</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($results as $Prodm): ?>
+                    <?php foreach ($results as $produit): ?>
                         <tr>
-                            <td><?php echo $Prodm["nom_produit"]; ?></td>
-                            <td><?php echo $Prodm["description"]; ?></td>
-                            <td><?php echo $Prodm["prix"]; ?></td>
-                            <td><?php echo $Prodm["date_expiration"]; ?></td>
-                            <td><?php echo $Prodm["fournisseur"]; ?></td>
-                            <td><?php echo $Prodm["fabricant"]; ?></td>
-                            <td><?php echo $Prodm["categorie"]; ?></td>
+                            <td><?php echo htmlspecialchars($produit["nom_produit"]); ?></td>
+                            <td><?php echo htmlspecialchars($produit["description"]); ?></td>
+                            <td><?php echo htmlspecialchars($produit["prix"]); ?></td>
+                            <td><?php echo htmlspecialchars($produit["date_expiration"]); ?></td>
+                            <td><?php echo htmlspecialchars($produit["fournisseur"]); ?></td>
+                            <td><?php echo htmlspecialchars($produit["fabricant"]); ?></td>
+                            <td><?php echo htmlspecialchars($produit["categorie"]); ?></td>
                             <td>
-                                <form action='détails.php'>
-                                    <input type='hidden' name='id' value='<?php echo $Prodm["id"]; ?>' />
-                                    <input type='submit' value='Détail' />
+                                <form action='details.php' method='get'>
+                                    <input type='hidden' name='id' value='<?php echo $produit["id"]; ?>' />
+                                    <button class='details-button' type='submit'>Détail</button>
                                 </form>
                             </td>
                             <td>
-                            <form action='CreationRe.php'>
-                            <button class="creation-button" type="submit">Crée</button>
+                                <form action='modification.php' method='get'>
+                                    <input type='hidden' name='id' value='<?php echo $produit["id"]; ?>' />
+                                    <button class='modifier-button' type='submit'>Modifier</button>
                                 </form>
                             </td>
                             <td>
-                            <form action='modif.php'>
-                            <button class="modif-button" type="submit">modifier</button>
+                                <form action='suppression.php' method='post'>
+                                    <input type='hidden' name='action' value='supprimer'>
+                                    <input type='hidden' name='id' value='<?php echo $produit["id"]; ?>' />
+                                    <button class='supprimer-button' type='submit'>Supprimer</button>
                                 </form>
                             </td>
                         </tr>
@@ -85,7 +85,7 @@ try {
         </div>
 
         <div class="button-container">
-            <button class="return-button" onclick="window.location.href='index.php'">Retourner à l'accueil</button>
+            <button class="return-button" onclick="window.location.href='index.php'">Retour à l'accueil</button>
         </div>
     </div>
 </body>
