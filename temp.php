@@ -71,7 +71,7 @@ try {
                                 </form>
                             </td>
                             <td>
-                                <form action="details.php" method="get">
+                                <form action="détails.php" method="get">
                                     <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
                                     <button class="detail-button" type="submit">Détail</button>
                                 </form>
