@@ -70,6 +70,18 @@ try {
                                     <button class="supprimer-button" type="submit">Supprimer</button>
                                 </form>
                             </td>
+                            <td>
+                                <form action="details.php" method="get">
+                                    <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
+                                    <button class="detail-button" type="submit">Détail</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="CreationRe.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
+                                    <button class="creation-button" type="submit">Créer</button>
+                                </form>
+                            </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

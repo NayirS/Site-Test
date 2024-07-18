@@ -46,49 +46,56 @@ body {
 }
 
 .return-button,
+.modif-button,
 .creation-button,
-.modifier-button,
+.detail-button,
 .supprimer-button {
     padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    margin-right: 5px;
 }
 
-.return-button {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.return-button:hover {
+.return-button:hover,
+.modif-button:hover,
+.creation-button:hover,
+.detail-button:hover,
+.supprimer-button:hover {
     background-color: #45a049;
 }
 
 .creation-button {
     background-color: #008CBA;
-    color: white;
 }
 
 .creation-button:hover {
     background-color: #007bb5;
 }
 
-.modifier-button {
+.modif-button {
     background-color: #4CAF50;
-    color: white;
 }
 
-.modifier-button:hover {
+.modif-button:hover {
     background-color: #45a049;
 }
 
+.detail-button {
+    background-color: #337ab7;
+}
+
+.detail-button:hover {
+    background-color: #2e6da4;
+}
+
 .supprimer-button {
-    background-color: #f44336;
-    color: white;
+    background-color: #d9534f;
 }
 
 .supprimer-button:hover {
-    background-color: #d32f2f;
+    background-color: #c9302c;
 }
